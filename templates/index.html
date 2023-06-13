@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Spam Classifier</title>
+</head>
+<body>
+    <h1>Email Spam Classifier</h1>
+
+    <form action="/predict" method="POST">
+        <label for="message">Enter Email Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Classify">
+    </form>
+
+    {% if message %}
+        <h3>Entered Message:</h3>
+        <p>{{ message }}</p>
+    {% endif %}
+
+    {% if result %}
+        <h3>Prediction:</h3>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
